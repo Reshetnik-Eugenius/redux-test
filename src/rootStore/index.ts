@@ -1,4 +1,3 @@
-import { type } from "os";
 import { combineReducers } from "redux";
 
 interface CountModel {
@@ -20,7 +19,7 @@ interface DelCount {
 export type countActions = AddCount | DelCount;
 
 const initialState: CountModel = {
-    count: 0
+    count: 5
 }
 
 const countReducer = (state: CountModel = initialState, action: countActions) =>{
@@ -40,5 +39,7 @@ const countReducer = (state: CountModel = initialState, action: countActions) =>
 const rootReducer = combineReducers({
     count: countReducer
 })
-
+export interface rootState {
+    count: CountModel;
+}
 export default rootReducer;
